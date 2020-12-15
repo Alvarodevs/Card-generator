@@ -3,28 +3,40 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = function() {
-  let suits = ["spades", "hearts", "clubs", "diamonds"];
-  //     {
-  //       name: "spades",
-  //       image:
-  //         "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
-  //     },
-  //     {
-  //       name: "hearts",
-  //       image:
-  //         "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
-  //     },
-  //     {
-  //       name: "clubs",
-  //       image:
-  //         "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
-  //     },
-  //     {
-  //       name: "diamonds",
-  //       image:
-  //         "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
-  //     }
-  //   ];
+  let suits = [
+    {
+      name: "spades",
+      sign: "♠",
+      code: "u+2660 ISOpub",
+      color: "black",
+      image:
+        "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
+    },
+    {
+      name: "hearts",
+      sign: "♥",
+      code: "u+2665 ISOpub",
+      color: "red",
+      image:
+        "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
+    },
+    {
+      name: "clubs",
+      sign: "♣",
+      code: "u+2663 ISOpub",
+      color: "black",
+      image:
+        "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
+    },
+    {
+      name: "diamonds",
+      sign: "♦",
+      code: "u+2666 ISOpub",
+      color: "red",
+      image:
+        "https://w7.pngwing.com/pngs/667/791/png-transparent-playing-card-poker-suit-spades-gambling-ace-card-king-leaf-hearts.png"
+    }
+  ];
 
   let numbers = [
     "A",
@@ -46,10 +58,12 @@ window.onload = function() {
   let number = Math.floor(Math.random() * numbers.length);
 
   var newSuit = document.getElementById("suit");
-  newSuit.innerHTML = suits[suit];
+  newSuit.classList.add(suits[suit].color);
+  newSuit.innerHTML = suits[suit].sign;
 
   var newSuit2 = document.getElementById("suit2");
-  newSuit2.innerHTML = suits[suit];
+  newSuit2.classList.add(suits[suit].color);
+  newSuit2.innerHTML = suits[suit].sign;
 
   var newcard = document.getElementById("number");
   newcard.innerHTML = numbers[number];
